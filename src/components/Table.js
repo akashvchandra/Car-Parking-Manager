@@ -1,7 +1,6 @@
 import React from "react";
 
 class Table extends React.Component {
-
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -14,7 +13,6 @@ class Table extends React.Component {
     this.onRegNoInputChange = this.onRegNoInputChange.bind(this)
     this.onColorInputChange = this.onColorInputChange.bind(this)
 	}
-
 	onRegNoInputChange(e){
     if(e.target.value!==""){
       this.setState({filterByRegNo:true})
@@ -24,7 +22,6 @@ class Table extends React.Component {
     this.setState({filterRegNo:e.target.value.toUpperCase()})
     console.log(this.state)
   }
-
   onColorInputChange(e){
     if(e.target.value!==""){
       this.setState({filterByColor:true})
@@ -33,7 +30,6 @@ class Table extends React.Component {
     }
     this.setState({filterColor:e.target.value.toUpperCase()})
   }
-	
 	render () {
 		return (
 			<div>
@@ -56,8 +52,6 @@ class Table extends React.Component {
 								</tr>
 							) : ('') 
 						))} 
-
-						
 						{Object.keys(this.props.parkingLot).map((slot) => (
               this.state.filterByRegNo && this.props.parkingLot[slot].regNo.includes(this.state.filterRegNo) && this.props.parkingLot[slot].isOccupied ? (
                 <tr>

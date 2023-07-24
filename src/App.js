@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Titles from "./components/Titles";
 import Form from "./components/Form";
 import Table from "./components/Table";
@@ -20,24 +19,20 @@ class App extends React.Component {
         9:{regNo:'',carColor:'GREEN',isOccupied:false},
         10:{regNo:'',carColor:'YELLOW',isOccupied:false},
       },
-
       slotsAvailable: 6
     }
-
     this.addCar = this.addCar.bind(this)
     this.removeCar = this.removeCar.bind(this)
   }
-
+  
   addCar(slotNo,regNo,carColor) {
-    console.log("addCar in App gets these parameters", slotNo,regNo,carColor);
-    
+    console.log("addCar in App gets these parameters", slotNo,regNo,carColor); 
     let stateTmp = Object.assign({}, this.state);
     stateTmp.parkingLot[slotNo] = {regNo:regNo,carColor:carColor,isOccupied:true}
     this.setState({stateTmp})
     this.setState({slotsAvailable:this.state.slotsAvailable - 1})
     console.log("updated values in stateTmp only which are occupied", JSON.stringify(stateTmp))
   }
-
   removeCar(slotNo) {
     this.state.parkingLot[slotNo].isOccupied = false;
     this.setState({parkingLot:this.state.parkingLot})  

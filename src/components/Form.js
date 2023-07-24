@@ -60,11 +60,12 @@ class Form extends React.Component {
           name="regno"
           placeholder="TN-54-AB-1234"
         />
-        <select name="select" onChange={this.setSelectedColor}>
-          <option value="Blue">Blue</option>
-          <option value="Red">Red</option>
-          <option value="White">White</option>
-          <option value="Black">Black</option>
+        <select name="select" onChange={this.setSelectedColor} placeholder='Colour'>
+        <option value="" disabled selected>Colour</option>
+          <option value="Blue" id="blueCar">Blue</option>
+          <option value="Red" id="redCar">Red</option>
+          <option value="White" id="whiteCar">White</option>
+          <option value="Black" id="blackCar">Black</option>
         </select>
         <button onClick={this.addCar}>Park Car</button>
       </form>
